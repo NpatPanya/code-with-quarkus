@@ -17,10 +17,10 @@ public class OBJCollection {
 
     public OBJCollection() {}
 
-    public OBJCollection(ArrayList<Object> userDetails , ArrayList<Object> contractDetails) {
-        this.userDetails  = userDetails ;
-        this.contractDetails = contractDetails;
-    }
+//    public OBJCollection(ArrayList<Object> userDetails , ArrayList<Object> contractDetails) {
+//        this.userDetails  = userDetails ;
+//        this.contractDetails = contractDetails;
+//    }
 
     public ArrayList<Object> getUserDetails() {
         return userDetails ;
@@ -36,7 +36,7 @@ public class OBJCollection {
     }
 
     public void addUserDetails(Object userDetails ) {
-        this.userDetails .add(userDetails );
+        this.userDetails.add(userDetails );
     }
     public void addContractDetails(Object contractDetails) {
         this.contractDetails.add(contractDetails);

@@ -11,7 +11,7 @@ public class OBJD {
     @XmlElement
     private String address;
     @XmlElement
-    private String distric;
+    private String district;
     @XmlElement
     private String city;
     @XmlElement
@@ -19,12 +19,12 @@ public class OBJD {
 
     public OBJD() {}
 
-    public OBJD(String address, String distric, String city, int postal) {
-        this.address = address;
-        this.distric = distric;
-        this.city = city;
-        this.postal = postal;
-    }
+//    public OBJD(String address, String district, String city, int postal) {
+//        this.address = address;
+//        this.district = district;
+//        this.city = city;
+//        this.postal = postal;
+//    }
 
     public String getAddress() {
         return address;
@@ -32,11 +32,11 @@ public class OBJD {
     public void setAddress(String address) {
         this.address = address;
     }
-    public String getDistric() {
-        return distric;
+    public String getDistrict() {
+        return district;
     }
-    public void setDistric(String distric) {
-        this.distric = distric;
+    public void setDistrict(String district) {
+        this.district = district;
     }
     public String getCity() {
         return city;

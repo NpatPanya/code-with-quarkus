@@ -14,5 +14,5 @@ import org.acme.SOAP_service.AllinOne.material.OBJD;
 public interface AllInOneService {
 
     @WebMethod
-    Wrapper combineStructure(String name, Date dayMonth,ArrayList<String> sign, OBJD objd, OBJCollection collection );
+    Wrapper combineStructure(String type, Date date, ArrayList<String> sign, OBJD objd, OBJCollection collection );
 }

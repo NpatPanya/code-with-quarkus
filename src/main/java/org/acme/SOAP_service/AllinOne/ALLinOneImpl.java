@@ -18,33 +18,48 @@ import org.acme.SOAP_service.AllinOne.material.*;
 public class ALLinOneImpl implements AllInOneService {
 
     private Type type;
-    private DayMonth day;
+    private DayMonth dayset;
     private Signature signature;
     private OBJD objd;
     private OBJCollection collection;
 
     public ALLinOneImpl() {
         this.type = new Type();
-        this.day = new DayMonth();
+        this.dayset = new DayMonth();
         this.signature = new Signature();
         this.objd = new OBJD();
         this.collection = new OBJCollection();
+
     }
 
     @WebMethod
-    public Wrapper combineStructure(String name, Date dayMonth, ArrayList<String> sign, OBJD objd, OBJCollection collection ){
-        type.setType(name);
-        day.setDate(dayMonth);
-        signature.setSignature(sign);
-        this.objd=objd;
-        this.collection=collection;
+    public Wrapper combineStructure(String name, Date date, ArrayList<String> sign, OBJD objd, OBJCollection collection ){
+        Wrapper wrapper = new Wrapper();
+        try {
+            type.setType(name);
+            wrapper.setType(type);
 
-        Wrapper wrapper = new Wrapper(type,day,signature,objd,collection);
+            dayset.setDate(date);
+            wrapper.setDay(dayset);
 
+            signature.setSignature(sign);
+            wrapper.setSignature(signature);
+
+            wrapper.setObjd(objd);
+
+            wrapper.setCollection(collection);
+
+        } catch (IllegalArgumentException e) {
+            // Handle expected exceptions (invalid arguments)
+            // Log the error and return a meaningful message in the response
+            e.printStackTrace();  // You can replace this with a logger to log the error
+            throw new RuntimeException("Invalid input: " + e.getMessage());
+        }
+        catch (Exception e) {
+            e.printStackTrace();  // You can replace this with a logger to log the error
+            throw new RuntimeException("An unexpected error occurred: " + e.getMessage());
+        }
         return wrapper;
-
-
-
-
     }
 }
+

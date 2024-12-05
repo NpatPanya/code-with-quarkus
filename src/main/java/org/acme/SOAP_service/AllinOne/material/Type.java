@@ -16,7 +16,7 @@ public class Type {
     public Type(String type){
         this.type = type;
     }
-//    @XmlElement(name = "type")
+
     public String getType(){
         return type;
     }
